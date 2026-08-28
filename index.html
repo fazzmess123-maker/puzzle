@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Mayhem 🐾</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-shapes">
+        <span>⭐</span>
+        <span>🌈</span>
+        <span>✨</span>
+        <span>🍀</span>
+        <span>💫</span>
+        <span>🌸</span>
+    </div>
+
+    <main class="game-container">
+
+        <!-- HEADER -->
+        <header class="game-header">
+            <div>
+                <p class="eyebrow">🐾 MINI CHALLENGE</p>
+                <h1>Maze <span>Mayhem</span></h1>
+                <p class="subtitle">
+                    Pick your animal, escape the maze and unlock your reward.
+                </p>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <span>⏱️</span>
+                    <strong id="timer">00:00</strong>
+                    <small>TIME</small>
+                </div>
+
+                <div class="stat">
+                    <span>👣</span>
+                    <strong id="moves">0</strong>
+                    <small>MOVES</small>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- CHARACTER SELECTION -->
+        <section class="character-panel" id="characterPanel">
+
+            <h2>Choose your escape artist</h2>
+            <p>Who is brave enough to enter the maze?</p>
+
+            <div class="characters">
+
+                <button class="character selected" data-animal="🐱">
+                    <span>🐱</span>
+                    <b>Kitty</b>
+                </button>
+
+                <button class="character" data-animal="🐶">
+                    <span>🐶</span>
+                    <b>Doggo</b>
+                </button>
+
+                <button class="character" data-animal="🦊">
+                    <span>🦊</span>
+                    <b>Fox</b>
+                </button>
+
+                <button class="character" data-animal="🐸">
+                    <span>🐸</span>
+                    <b>Froggy</b>
+                </button>
+
+                <button class="character" data-animal="🐼">
+                    <span>🐼</span>
+                    <b>Panda</b>
+                </button>
+
+                <button class="character" data-animal="🐰">
+                    <span>🐰</span>
+                    <b>Bunny</b>
+                </button>
+
+            </div>
+
+            <button class="start-btn" id="startBtn">
+                ENTER THE MAZE 🚀
+            </button>
+
+        </section>
+
+
+        <!-- GAME -->
+        <section class="game-section hidden" id="gameSection">
+
+            <div class="maze-wrapper">
+
+                <div class="maze-top">
+                    <div>
+                        <span class="badge">START</span>
+                    </div>
+
+                    <button id="newMazeBtn" class="small-btn">
+                        🔄 New Maze
+                    </button>
+
+                    <div>
+                        <span class="badge finish-badge">FINISH 🏆</span>
+                    </div>
+                </div>
+
+                <div id="maze" class="maze"></div>
+
+            </div>
+
+
+            <!-- MOBILE CONTROLS -->
+            <div class="controls">
+
+                <button class="control up" data-direction="up">⬆️</button>
+
+                <div class="horizontal-controls">
+                    <button class="control" data-direction="left">⬅️</button>
+                    <button class="control" data-direction="down">⬇️</button>
+                    <button class="control" data-direction="right">➡️</button>
+                </div>
+
+            </div>
+
+            <p class="instructions">
+                ⌨️ Use <b>WASD</b> or <b>Arrow Keys</b> to move
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- SUSPENSE SCREEN -->
+    <div class="overlay hidden" id="suspenseScreen">
+
+        <div class="suspense-card">
+
+            <div class="loader">🎁</div>
+
+            <h2>MAZE COMPLETE!</h2>
+
+            <p>You unlocked something...</p>
+
+            <div class="loading-bar">
+                <div></div>
+            </div>
+
+            <span>Preparing your reward...</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- MEME REWARD -->
+    <div class="overlay hidden" id="rewardScreen">
+
+        <div class="reward-card">
+
+            <button class="close-btn" id="closeReward">✕</button>
+
+            <div class="reward-title">
+                🎉 REWARD UNLOCKED 🎉
+            </div>
+
+            <video
+                id="memeVideo"
+                src="meme.mp4"
+                controls
+                playsinline
+                preload="auto">
+            </video>
+
+            <h2>YOU ACTUALLY DID IT 😂</h2>
+
+            <p>That was probably not worth it.</p>
+
+            <div class="reward-buttons">
+                <button id="playAgainBtn">
+                    🔄 Play Again
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONFETTI -->
+    <div id="confetti"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
